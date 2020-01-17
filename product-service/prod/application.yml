@@ -1,0 +1,19 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: SapientCloudConfig
+  datasource:
+    url: jdbc:h2:mem:product_db;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: root
+    password: root
+
+logging:
+  level:
+    root: DEBUG
+    org:
+      springframework:
+          web: DEBUG
+          data: DEBUG
