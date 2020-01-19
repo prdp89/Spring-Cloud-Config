@@ -36,11 +36,11 @@ eureka:
 
 logging:
   level:
-    root: DEBUG
+    root: INFO
     org:
       springframework:
-          web: DEBUG
-          data: DEBUG
+          web: INFO
+          data: INFO
 
 redis:
   enable: false
