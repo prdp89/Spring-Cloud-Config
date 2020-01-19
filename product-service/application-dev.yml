@@ -1,0 +1,46 @@
+server:
+  port: 9090
+
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  application:
+    name: SapientProduct
+  datasource:
+    url: jdbc:h2:mem:product_db;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: root
+    password: root
+  jpa:
+    ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        enable_lazy_load_no_trans: true
+  redis:
+    port: 6379
+    host: localhost
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    preferIpAddress: false
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+logging:
+  level:
+    root: DEBUG
+    org:
+      springframework:
+          web: DEBUG
+          data: DEBUG
+
+redis:
+  enable: false
